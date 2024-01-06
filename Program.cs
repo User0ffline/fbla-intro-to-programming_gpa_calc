@@ -1,17 +1,19 @@
+// Our GPAUX namespace
 namespace GPAUX
 {
+    // The main Program class that runs our application.
     internal static class Program
     {
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
+
+        // The Main method which specifically initializes the application.
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new GPAHarbor());
         }
     }
 }
