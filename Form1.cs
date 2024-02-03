@@ -1,4 +1,5 @@
 using System.Data;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 // Our main namespace GPAUX
@@ -26,21 +27,33 @@ namespace GPAUX
             {"F", 0.0}
         };
 
+        int height = 0;
+
         // Initializing the Form1 component
         public GPAHarbor()
         {
             InitializeComponent();
+            //tableLayoutPanel1.RowStyles.RemoveAt(0);
+            semesterDataGridView.DefaultCellStyle.Font = new Font("Quicksand", 14);
+            this.AutoScroll = false;
+            this.tableLayoutPanel1.AutoScroll = false;
+
         }
 
         // Adding a new semester grid
         private void addSemesterButton_Click(object sender, EventArgs e)
         {
+            tableLayoutPanel1.SuspendLayout();
+            this.AutoScroll = true;
+            this.tableLayoutPanel1.AutoScroll = true;
+
             // Create a new semester grid and add it to UI panel
             DataGridView gridView = new DataGridView();
             gridView.Size = semesterDataGridView.Size;
             gridView.AutoSizeColumnsMode = semesterDataGridView.AutoSizeColumnsMode;
             gridView.AutoSizeRowsMode = semesterDataGridView.AutoSizeRowsMode;
             gridView.ColumnHeadersHeight = semesterDataGridView.ColumnHeadersHeight;
+            gridView.DefaultCellStyle.Font = new Font("Quicksand", 14);
 
             foreach (DataGridViewColumn column in semesterDataGridView.Columns)
             {  
@@ -58,10 +71,10 @@ namespace GPAUX
 
             // Add label for the semester text
             Label label= new Label();
-            label.Text = "Semester" + tableLayoutPanel1.RowCount;
+            label.Text = "Semester " + tableLayoutPanel1.RowCount;
             label.Font = semesterLabel.Font;
             tableLayoutPanel1.Controls.Add(label, 0, tableLayoutPanel1.RowCount - 1);
-
+            tableLayoutPanel1.ResumeLayout(true);
         }
 
         // Calculate the GPA button callback
@@ -150,7 +163,7 @@ namespace GPAUX
                 // Displaying the semester number and weighted and unweighted GPAs
                 // In our results table
                 int index = resultsDataGridView.Rows.Add();
-                resultsDataGridView.Rows[index].Cells[0].Value = "Semester" + semester;
+                resultsDataGridView.Rows[index].Cells[0].Value = "Semester " + semester;
                 resultsDataGridView.Rows[index].Cells[1].Value = weighted;
                 resultsDataGridView.Rows[index].Cells[2].Value = unweighted;
             }
@@ -190,6 +203,60 @@ namespace GPAUX
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             InitializeComponent();
+        }
+
+        // Sending the user to their mail application allowing them to report bugs to us
+        // through an email request link
+        private void bugReportEmail_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(new ProcessStartInfo("mailto:gradeharbor123@gmail.com?subject=GPA%20Harbor%20Bug%20Report&body=Start%20here:%20") { UseShellExecute = true });    
+        }
+
+        // Resetting all of our user's data with our reset button
+        private void ResetButton_Click(object sender, EventArgs e)
+        {
+            // Using a pop-up window to check if the user wishes to reset their data
+            if (MessageBox.Show("Are you sure you want to clear your data?", "Clear Data?", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                // Clearing the results table and semester grid table, as well as resetting
+                // the left-hand side of the screen
+                tableLayoutPanel1.SuspendLayout();
+
+                resultsDataGridView.Rows.Clear();
+                semesterDataGridView.Rows.Clear();
+
+                // Resetting the weighted and unweighted GPAs
+                unweighted = 0;
+                weighted = 0;
+
+                // Going through each semester grid and removing it (except for the first, which is just cleared)
+                int rowCount = tableLayoutPanel1.RowCount-1;
+                while(rowCount >= 1 ) {
+                    for (int i = 0; i < tableLayoutPanel1.ColumnCount; i++)
+                    {
+                        // Removing the data from each row in each column of the left hand table
+                        Control Control = tableLayoutPanel1.GetControlFromPosition(i, rowCount);
+                        tableLayoutPanel1.Controls.Remove(Control);
+                    }
+
+                    // Removing the row from the table on the left
+                    tableLayoutPanel1.RowStyles.RemoveAt(rowCount - 1);
+                    rowCount--;
+                    tableLayoutPanel1.RowCount--;
+
+                }
+
+                // Disabling the table auto scroll and allowing
+                // the table panel to resume usual layout logic
+                this.AutoScroll = false;
+                this.tableLayoutPanel1.AutoScroll= false;
+                tableLayoutPanel1.ResumeLayout(true);
+
+                // Displaying our cumulative GPAs
+                cumulativeUnweightedGPA.Text = "0";
+                cumulativeWeightedGPA.Text = "0";
+
+            }
         }
     }
 }

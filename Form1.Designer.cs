@@ -42,6 +42,8 @@ namespace GPAUX
             this.CreditsColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.CourseTypeColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.semesterLabel = new System.Windows.Forms.Label();
+            this.ResetButton = new System.Windows.Forms.Button();
+            this.bugReportEmail = new System.Windows.Forms.LinkLabel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -77,6 +79,8 @@ namespace GPAUX
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.AutoScroll = true;
+            this.splitContainer1.Panel2.Controls.Add(this.ResetButton);
+            this.splitContainer1.Panel2.Controls.Add(this.bugReportEmail);
             this.splitContainer1.Panel2.Controls.Add(this.richTextBox1);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
@@ -86,17 +90,17 @@ namespace GPAUX
             this.splitContainer1.Panel2.Controls.Add(this.resultsDataGridView);
             this.splitContainer1.Panel2.Controls.Add(this.addSemesterButton);
             this.splitContainer1.Panel2.Font = new System.Drawing.Font("Quicksand", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.splitContainer1.Size = new System.Drawing.Size(1260, 836);
-            this.splitContainer1.SplitterDistance = 625;
+            this.splitContainer1.Size = new System.Drawing.Size(1552, 917);
+            this.splitContainer1.SplitterDistance = 769;
             this.splitContainer1.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.AutoScroll = true;
+            this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.semesterDataGridView, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.semesterLabel, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -105,7 +109,7 @@ namespace GPAUX
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(625, 836);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(769, 917);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // semesterDataGridView
@@ -139,13 +143,13 @@ namespace GPAUX
             this.semesterDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.semesterDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.semesterDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.semesterDataGridView.Location = new System.Drawing.Point(123, 4);
+            this.semesterDataGridView.Location = new System.Drawing.Point(98, 4);
             this.semesterDataGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.semesterDataGridView.Name = "semesterDataGridView";
             this.semesterDataGridView.RowTemplate.Height = 25;
             this.semesterDataGridView.ShowCellErrors = false;
             this.semesterDataGridView.ShowCellToolTips = false;
-            this.semesterDataGridView.Size = new System.Drawing.Size(499, 829);
+            this.semesterDataGridView.Size = new System.Drawing.Size(668, 911);
             this.semesterDataGridView.TabIndex = 6;
             this.semesterDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.semesterDataGridView_CellContentClick);
             // 
@@ -213,17 +217,44 @@ namespace GPAUX
             this.semesterLabel.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.semesterLabel.Location = new System.Drawing.Point(3, 0);
             this.semesterLabel.Name = "semesterLabel";
-            this.semesterLabel.Size = new System.Drawing.Size(114, 837);
+            this.semesterLabel.Size = new System.Drawing.Size(89, 919);
             this.semesterLabel.TabIndex = 8;
-            this.semesterLabel.Text = "Semester1";
+            this.semesterLabel.Text = "Semester 1";
+            // 
+            // ResetButton
+            // 
+            this.ResetButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ResetButton.Font = new System.Drawing.Font("Quicksand", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ResetButton.Location = new System.Drawing.Point(0, 314);
+            this.ResetButton.Name = "ResetButton";
+            this.ResetButton.Size = new System.Drawing.Size(779, 33);
+            this.ResetButton.TabIndex = 10;
+            this.ResetButton.Text = "Reset";
+            this.ResetButton.UseVisualStyleBackColor = true;
+            this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
+            // 
+            // bugReportEmail
+            // 
+            this.bugReportEmail.ActiveLinkColor = System.Drawing.Color.SteelBlue;
+            this.bugReportEmail.AutoSize = true;
+            this.bugReportEmail.Font = new System.Drawing.Font("Quicksand", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bugReportEmail.LinkColor = System.Drawing.Color.DarkSlateGray;
+            this.bugReportEmail.Location = new System.Drawing.Point(3, 539);
+            this.bugReportEmail.Name = "bugReportEmail";
+            this.bugReportEmail.Size = new System.Drawing.Size(136, 28);
+            this.bugReportEmail.TabIndex = 9;
+            this.bugReportEmail.TabStop = true;
+            this.bugReportEmail.Text = "Report a Bug?";
+            this.bugReportEmail.VisitedLinkColor = System.Drawing.Color.Purple;
+            this.bugReportEmail.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.bugReportEmail_LinkClicked);
             // 
             // richTextBox1
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.richTextBox1.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.richTextBox1.Location = new System.Drawing.Point(0, 528);
+            this.richTextBox1.Location = new System.Drawing.Point(0, 582);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(614, 335);
+            this.richTextBox1.Size = new System.Drawing.Size(779, 335);
             this.richTextBox1.TabIndex = 8;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
@@ -271,10 +302,10 @@ namespace GPAUX
             // 
             this.calculateGPAButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.calculateGPAButton.Font = new System.Drawing.Font("Quicksand Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.calculateGPAButton.Location = new System.Drawing.Point(3, 301);
+            this.calculateGPAButton.Location = new System.Drawing.Point(3, 354);
             this.calculateGPAButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.calculateGPAButton.Name = "calculateGPAButton";
-            this.calculateGPAButton.Size = new System.Drawing.Size(198, 72);
+            this.calculateGPAButton.Size = new System.Drawing.Size(198, 64);
             this.calculateGPAButton.TabIndex = 2;
             this.calculateGPAButton.Text = "Calculate GPA";
             this.calculateGPAButton.UseVisualStyleBackColor = true;
@@ -282,7 +313,7 @@ namespace GPAUX
             // 
             // resultsDataGridView
             // 
-            this.resultsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.resultsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.resultsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.resultsDataGridView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -309,7 +340,7 @@ namespace GPAUX
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.resultsDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.resultsDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
-            this.resultsDataGridView.Location = new System.Drawing.Point(0, 68);
+            this.resultsDataGridView.Location = new System.Drawing.Point(0, 88);
             this.resultsDataGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.resultsDataGridView.Name = "resultsDataGridView";
             this.resultsDataGridView.RowHeadersWidth = 50;
@@ -317,7 +348,7 @@ namespace GPAUX
             this.resultsDataGridView.ShowCellErrors = false;
             this.resultsDataGridView.ShowCellToolTips = false;
             this.resultsDataGridView.ShowRowErrors = false;
-            this.resultsDataGridView.Size = new System.Drawing.Size(614, 226);
+            this.resultsDataGridView.Size = new System.Drawing.Size(779, 226);
             this.resultsDataGridView.TabIndex = 1;
             // 
             // SemesterColumn
@@ -349,7 +380,7 @@ namespace GPAUX
             this.addSemesterButton.Location = new System.Drawing.Point(0, 0);
             this.addSemesterButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.addSemesterButton.Name = "addSemesterButton";
-            this.addSemesterButton.Size = new System.Drawing.Size(614, 68);
+            this.addSemesterButton.Size = new System.Drawing.Size(779, 88);
             this.addSemesterButton.TabIndex = 0;
             this.addSemesterButton.Text = "Add Semester";
             this.addSemesterButton.UseVisualStyleBackColor = true;
@@ -360,7 +391,7 @@ namespace GPAUX
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1260, 836);
+            this.ClientSize = new System.Drawing.Size(1552, 917);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Quicksand", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -403,5 +434,7 @@ namespace GPAUX
         private DataGridViewComboBoxColumn CreditsColumn;
         private DataGridViewComboBoxColumn CourseTypeColumn;
         private RichTextBox richTextBox1;
+        private LinkLabel bugReportEmail;
+        private Button ResetButton;
     }
 }
