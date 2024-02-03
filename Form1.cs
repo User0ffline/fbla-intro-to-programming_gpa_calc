@@ -70,9 +70,14 @@ namespace GPAUX
             tableLayoutPanel1.Font = semesterLabel.Font;
 
             // Add label for the semester text
+            // And copying all of the properties of the semester label
             Label label= new Label();
             label.Text = "Semester " + tableLayoutPanel1.RowCount;
             label.Font = semesterLabel.Font;
+            label.Size = semesterLabel.Size;
+            
+            // Adding the Controls of the table layout and resuming the layout
+            // to avoid flickering
             tableLayoutPanel1.Controls.Add(label, 0, tableLayoutPanel1.RowCount - 1);
             tableLayoutPanel1.ResumeLayout(true);
         }
@@ -248,6 +253,7 @@ namespace GPAUX
 
                 // Disabling the table auto scroll and allowing
                 // the table panel to resume usual layout logic
+                // which allows us to avoid flickering
                 this.AutoScroll = false;
                 this.tableLayoutPanel1.AutoScroll= false;
                 tableLayoutPanel1.ResumeLayout(true);

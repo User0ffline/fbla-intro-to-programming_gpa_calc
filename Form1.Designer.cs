@@ -90,8 +90,8 @@ namespace GPAUX
             this.splitContainer1.Panel2.Controls.Add(this.resultsDataGridView);
             this.splitContainer1.Panel2.Controls.Add(this.addSemesterButton);
             this.splitContainer1.Panel2.Font = new System.Drawing.Font("Quicksand", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.splitContainer1.Size = new System.Drawing.Size(1552, 917);
-            this.splitContainer1.SplitterDistance = 769;
+            this.splitContainer1.Size = new System.Drawing.Size(1782, 1161);
+            this.splitContainer1.SplitterDistance = 882;
             this.splitContainer1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -109,7 +109,7 @@ namespace GPAUX
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(769, 917);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(882, 1161);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // semesterDataGridView
@@ -143,22 +143,24 @@ namespace GPAUX
             this.semesterDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.semesterDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.semesterDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.semesterDataGridView.Location = new System.Drawing.Point(98, 4);
+            this.semesterDataGridView.Location = new System.Drawing.Point(141, 4);
             this.semesterDataGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.semesterDataGridView.Name = "semesterDataGridView";
+            this.semesterDataGridView.RowHeadersWidth = 62;
             this.semesterDataGridView.RowTemplate.Height = 25;
             this.semesterDataGridView.ShowCellErrors = false;
             this.semesterDataGridView.ShowCellToolTips = false;
-            this.semesterDataGridView.Size = new System.Drawing.Size(668, 911);
+            this.semesterDataGridView.Size = new System.Drawing.Size(738, 1153);
             this.semesterDataGridView.TabIndex = 6;
             this.semesterDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.semesterDataGridView_CellContentClick);
             // 
             // CourseNameColumn
             // 
             this.CourseNameColumn.HeaderText = "Course Name";
+            this.CourseNameColumn.MinimumWidth = 8;
             this.CourseNameColumn.Name = "CourseNameColumn";
             this.CourseNameColumn.ToolTipText = "Enter your course name.";
-            this.CourseNameColumn.Width = 156;
+            this.CourseNameColumn.Width = 232;
             // 
             // GradeColumn
             // 
@@ -175,9 +177,10 @@ namespace GPAUX
             "D+",
             "D",
             "F"});
+            this.GradeColumn.MinimumWidth = 8;
             this.GradeColumn.Name = "GradeColumn";
             this.GradeColumn.ToolTipText = "Click the dropdown for your letter grade.";
-            this.GradeColumn.Width = 71;
+            this.GradeColumn.Width = 104;
             // 
             // CreditsColumn
             // 
@@ -194,9 +197,10 @@ namespace GPAUX
             "4.5",
             "5",
             "5.5"});
+            this.CreditsColumn.MinimumWidth = 8;
             this.CreditsColumn.Name = "CreditsColumn";
             this.CreditsColumn.ToolTipText = "Click the dropdown and click on your credit count for the course.";
-            this.CreditsColumn.Width = 78;
+            this.CreditsColumn.Width = 114;
             // 
             // CourseTypeColumn
             // 
@@ -206,9 +210,10 @@ namespace GPAUX
             "AP",
             "IB",
             "Honors"});
+            this.CourseTypeColumn.MinimumWidth = 8;
             this.CourseTypeColumn.Name = "CourseTypeColumn";
             this.CourseTypeColumn.ToolTipText = "Choose the type of course you took.";
-            this.CourseTypeColumn.Width = 126;
+            this.CourseTypeColumn.Width = 186;
             // 
             // semesterLabel
             // 
@@ -217,7 +222,7 @@ namespace GPAUX
             this.semesterLabel.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.semesterLabel.Location = new System.Drawing.Point(3, 0);
             this.semesterLabel.Name = "semesterLabel";
-            this.semesterLabel.Size = new System.Drawing.Size(89, 919);
+            this.semesterLabel.Size = new System.Drawing.Size(132, 1161);
             this.semesterLabel.TabIndex = 8;
             this.semesterLabel.Text = "Semester 1";
             // 
@@ -227,7 +232,7 @@ namespace GPAUX
             this.ResetButton.Font = new System.Drawing.Font("Quicksand", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ResetButton.Location = new System.Drawing.Point(0, 314);
             this.ResetButton.Name = "ResetButton";
-            this.ResetButton.Size = new System.Drawing.Size(779, 33);
+            this.ResetButton.Size = new System.Drawing.Size(896, 47);
             this.ResetButton.TabIndex = 10;
             this.ResetButton.Text = "Reset";
             this.ResetButton.UseVisualStyleBackColor = true;
@@ -239,9 +244,9 @@ namespace GPAUX
             this.bugReportEmail.AutoSize = true;
             this.bugReportEmail.Font = new System.Drawing.Font("Quicksand", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bugReportEmail.LinkColor = System.Drawing.Color.DarkSlateGray;
-            this.bugReportEmail.Location = new System.Drawing.Point(3, 539);
+            this.bugReportEmail.Location = new System.Drawing.Point(0, 666);
             this.bugReportEmail.Name = "bugReportEmail";
-            this.bugReportEmail.Size = new System.Drawing.Size(136, 28);
+            this.bugReportEmail.Size = new System.Drawing.Size(210, 43);
             this.bugReportEmail.TabIndex = 9;
             this.bugReportEmail.TabStop = true;
             this.bugReportEmail.Text = "Report a Bug?";
@@ -252,9 +257,9 @@ namespace GPAUX
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.richTextBox1.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.richTextBox1.Location = new System.Drawing.Point(0, 582);
+            this.richTextBox1.Location = new System.Drawing.Point(0, 778);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(779, 335);
+            this.richTextBox1.Size = new System.Drawing.Size(896, 383);
             this.richTextBox1.TabIndex = 8;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
@@ -262,9 +267,9 @@ namespace GPAUX
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Quicksand", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(-1, 488);
+            this.label2.Location = new System.Drawing.Point(3, 563);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(394, 40);
+            this.label2.Size = new System.Drawing.Size(602, 61);
             this.label2.TabIndex = 6;
             this.label2.Text = "Cumulative Unweighted GPA - ";
             // 
@@ -272,37 +277,37 @@ namespace GPAUX
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Quicksand", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(-2, 422);
+            this.label1.Location = new System.Drawing.Point(0, 498);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(394, 43);
+            this.label1.Size = new System.Drawing.Size(594, 65);
             this.label1.TabIndex = 5;
             this.label1.Text = "Cumulative Weighted GPA - ";
             // 
             // cumulativeWeightedGPA
             // 
             this.cumulativeWeightedGPA.Font = new System.Drawing.Font("Quicksand Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cumulativeWeightedGPA.Location = new System.Drawing.Point(399, 422);
+            this.cumulativeWeightedGPA.Location = new System.Drawing.Point(611, 495);
             this.cumulativeWeightedGPA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cumulativeWeightedGPA.Name = "cumulativeWeightedGPA";
             this.cumulativeWeightedGPA.ReadOnly = true;
-            this.cumulativeWeightedGPA.Size = new System.Drawing.Size(100, 44);
+            this.cumulativeWeightedGPA.Size = new System.Drawing.Size(100, 62);
             this.cumulativeWeightedGPA.TabIndex = 4;
             // 
             // cumulativeUnweightedGPA
             // 
             this.cumulativeUnweightedGPA.Font = new System.Drawing.Font("Quicksand Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cumulativeUnweightedGPA.Location = new System.Drawing.Point(399, 482);
+            this.cumulativeUnweightedGPA.Location = new System.Drawing.Point(611, 578);
             this.cumulativeUnweightedGPA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cumulativeUnweightedGPA.Name = "cumulativeUnweightedGPA";
             this.cumulativeUnweightedGPA.ReadOnly = true;
-            this.cumulativeUnweightedGPA.Size = new System.Drawing.Size(100, 44);
+            this.cumulativeUnweightedGPA.Size = new System.Drawing.Size(100, 62);
             this.cumulativeUnweightedGPA.TabIndex = 3;
             // 
             // calculateGPAButton
             // 
             this.calculateGPAButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.calculateGPAButton.Font = new System.Drawing.Font("Quicksand Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.calculateGPAButton.Location = new System.Drawing.Point(3, 354);
+            this.calculateGPAButton.Location = new System.Drawing.Point(12, 406);
             this.calculateGPAButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.calculateGPAButton.Name = "calculateGPAButton";
             this.calculateGPAButton.Size = new System.Drawing.Size(198, 64);
@@ -348,29 +353,32 @@ namespace GPAUX
             this.resultsDataGridView.ShowCellErrors = false;
             this.resultsDataGridView.ShowCellToolTips = false;
             this.resultsDataGridView.ShowRowErrors = false;
-            this.resultsDataGridView.Size = new System.Drawing.Size(779, 226);
+            this.resultsDataGridView.Size = new System.Drawing.Size(896, 226);
             this.resultsDataGridView.TabIndex = 1;
             // 
             // SemesterColumn
             // 
             this.SemesterColumn.HeaderText = "Semester";
+            this.SemesterColumn.MinimumWidth = 8;
             this.SemesterColumn.Name = "SemesterColumn";
             this.SemesterColumn.ReadOnly = true;
-            this.SemesterColumn.Width = 105;
+            this.SemesterColumn.Width = 153;
             // 
             // GPAWeightedColumn
             // 
             this.GPAWeightedColumn.HeaderText = "GPA Weighted";
+            this.GPAWeightedColumn.MinimumWidth = 8;
             this.GPAWeightedColumn.Name = "GPAWeightedColumn";
             this.GPAWeightedColumn.ReadOnly = true;
-            this.GPAWeightedColumn.Width = 127;
+            this.GPAWeightedColumn.Width = 191;
             // 
             // GPAUnWeightedColumn
             // 
             this.GPAUnWeightedColumn.HeaderText = "GPA Unweighted";
+            this.GPAUnWeightedColumn.MinimumWidth = 8;
             this.GPAUnWeightedColumn.Name = "GPAUnWeightedColumn";
             this.GPAUnWeightedColumn.ReadOnly = true;
-            this.GPAUnWeightedColumn.Width = 142;
+            this.GPAUnWeightedColumn.Width = 215;
             // 
             // addSemesterButton
             // 
@@ -380,7 +388,7 @@ namespace GPAUX
             this.addSemesterButton.Location = new System.Drawing.Point(0, 0);
             this.addSemesterButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.addSemesterButton.Name = "addSemesterButton";
-            this.addSemesterButton.Size = new System.Drawing.Size(779, 88);
+            this.addSemesterButton.Size = new System.Drawing.Size(896, 88);
             this.addSemesterButton.TabIndex = 0;
             this.addSemesterButton.Text = "Add Semester";
             this.addSemesterButton.UseVisualStyleBackColor = true;
@@ -388,10 +396,10 @@ namespace GPAUX
             // 
             // GPAHarbor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1552, 917);
+            this.ClientSize = new System.Drawing.Size(1782, 1161);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Quicksand", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
