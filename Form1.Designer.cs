@@ -285,6 +285,7 @@ namespace GPAUX
             // 
             // cumulativeWeightedGPA
             // 
+            this.cumulativeWeightedGPA.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.cumulativeWeightedGPA.Font = new System.Drawing.Font("Quicksand Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cumulativeWeightedGPA.Location = new System.Drawing.Point(611, 495);
             this.cumulativeWeightedGPA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -295,6 +296,7 @@ namespace GPAUX
             // 
             // cumulativeUnweightedGPA
             // 
+            this.cumulativeUnweightedGPA.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.cumulativeUnweightedGPA.Font = new System.Drawing.Font("Quicksand Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cumulativeUnweightedGPA.Location = new System.Drawing.Point(611, 578);
             this.cumulativeUnweightedGPA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
